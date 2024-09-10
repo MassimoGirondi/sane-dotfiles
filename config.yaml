@@ -1,0 +1,21 @@
+config:
+  backup: true
+  create: true
+  dotpath: dotfiles
+dotfiles:
+  f_zshrc:
+    dst: ~/.zshrc
+    src: zshrc
+  f_zshenv:
+    dst: ~/.zshenv
+    src: zshenv
+  f_tmux:
+    dst: ~/.tmux.conf
+    src: tmux.conf
+  # f_vimrc:
+  #   dst: ~/.vimrc
+  #   src: vimrc
+  d_vim:
+    dst: ~/.vim
+    src: vim
+profiles:

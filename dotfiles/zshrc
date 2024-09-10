@@ -1,0 +1,38 @@
+autoload edit-command-line; zle -N edit-command-line
+#bindkey '^e' edit-command-line
+
+ZSH_THEME=""
+fpath+=($HOME/.zsh/pure)
+autoload -U promptinit; promptinit
+prompt pure
+zstyle ':prompt:pure:prompt:success' color cyan
+
+COMPLETION_WAITING_DOTS="true"
+
+plugins=(pip python sudo systemd git git-extras autopep8 zsh-syntax-highlighting)
+
+source $HOME/.oh-my-zsh/oh-my-zsh.sh
+
+DEFAULT_USER="$USER"
+prompt_context() {
+  if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
+    prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
+  fi
+}
+
+
+
+unsetopt AUTO_CD
+
+
+# if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+#     ssh-agent > "$XDG_RUNTIME_DIR/ssh-agent.env"
+#     eval "$(<"$XDG_RUNTIME_DIR/ssh-agent.env")"
+#     ssh-add
+# fi
+# if [[ ! "$SSH_AUTH_SOCK" ]]; then
+#     eval "$(<"$XDG_RUNTIME_DIR/ssh-agent.env")" >>/dev/null
+# fi
+# 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
