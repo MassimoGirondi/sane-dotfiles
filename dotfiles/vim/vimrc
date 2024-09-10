@@ -1,0 +1,62 @@
+set nocompatible     " Be iMproved
+" General settings
+language en_US.utf8
+set encoding=utf-8   " Unicode by default
+" Line numbers
+set number
+" When lines are too long
+set showbreak=+++
+" Matching parenthesis
+set showmatch
+set visualbell	
+set title
+set scrolloff=2                                         " keep 2 lines between cursor and edge
+
+" Search settings
+set hlsearch
+set smartcase 
+set ignorecase	
+set incsearch	
+
+set autowrite     " Automatically :write before running commands
+set showcmd       " display incomplete commands 
+
+" Indenting
+set autoindent	
+set cindent
+" set shiftwidth=4
+set smartindent	
+set smarttab	
+" set softtabstop=2
+" set tabstop=2
+set expandtab
+
+" Wild menu search and paths
+set wildmenu
+set path+=**
+
+" Mouse mode
+set mouse=a
+
+" Share the clipboard with X server
+set clipboard=unnamedplus
+
+" Files 
+set undolevels=1000
+set history=1000
+set backupdir=~/.vim/backup/
+set directory=~/.vim/backup/
+set undodir+=~/.vim/undo/
+set autoread
+
+set cpo+=J                                              " Yank by sentence (2-space a/ period)
+
+
+" Include other files
+source ~/.vim/plugins.vim
+source ~/.vim/mappings.vim
+source ~/.vim/functions.vim
+source ~/.vim/theme.vim
+source ~/.vim/filetypes.vim
+" Self contained .vim direcotry
+set viminfo+=n$HOME/.vim/viminfo
